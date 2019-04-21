@@ -38,9 +38,9 @@ import static com.github.sdnwiselab.sdnwise.packet.NetworkPacket.*;
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;
-import org.contikios.cooja.*;
-import org.contikios.cooja.interfaces.*;
-import org.contikios.cooja.motes.AbstractApplicationMote;
+import se.sics.cooja.*;
+import se.sics.cooja.interfaces.*;
+import se.sics.cooja.motes.AbstractApplicationMote;
 
 /**
  * Example SdnWise mote.

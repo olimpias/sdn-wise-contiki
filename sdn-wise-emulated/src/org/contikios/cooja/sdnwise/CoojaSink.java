@@ -24,7 +24,7 @@ import java.io.*;
 import java.net.*;
 import java.util.logging.*;
 import javax.swing.JOptionPane;
-import org.contikios.cooja.*;
+import se.sics.cooja.*;
 
 /**
  * @author Sebastiano Milardo

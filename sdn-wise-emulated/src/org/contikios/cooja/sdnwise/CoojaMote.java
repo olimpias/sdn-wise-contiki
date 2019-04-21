@@ -19,7 +19,7 @@ package org.contikios.cooja.sdnwise;;
 import com.github.sdnwiselab.sdnwise.mote.battery.Battery;
 import com.github.sdnwiselab.sdnwise.mote.core.*;
 import com.github.sdnwiselab.sdnwise.util.NodeAddress;
-import org.contikios.cooja.*;
+import se.sics.cooja.*;
 
 /**
  * @author Sebastiano Milardo

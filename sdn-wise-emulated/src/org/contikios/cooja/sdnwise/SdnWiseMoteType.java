@@ -33,9 +33,9 @@ package org.contikios.cooja.sdnwise;
 
 import java.io.File;
 
-import org.contikios.cooja.AbstractionLevelDescription;
-import org.contikios.cooja.ClassDescription;
-import org.contikios.cooja.motes.*;
+import se.sics.cooja.AbstractionLevelDescription;
+import se.sics.cooja.ClassDescription;
+import se.sics.cooja.motes.*;
 
 /**
  * @author Sebastiano Milardo
