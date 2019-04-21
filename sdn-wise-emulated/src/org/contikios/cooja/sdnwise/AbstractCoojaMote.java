@@ -34,6 +34,7 @@ package org.contikios.cooja.sdnwise;
 import com.github.sdnwiselab.sdnwise.mote.core.*;
 import com.github.sdnwiselab.sdnwise.packet.NetworkPacket;
 import static com.github.sdnwiselab.sdnwise.packet.NetworkPacket.*;
+import java.io.IOException;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
