@@ -32,7 +32,6 @@
 package org.contikios.cooja.sdnwise;
 
 import com.github.sdnwiselab.sdnwise.mote.core.*;
-import com.github.sdnwiselab.sdnwise.mote.logger.MoteFormatter;
 import com.github.sdnwiselab.sdnwise.packet.NetworkPacket;
 import static com.github.sdnwiselab.sdnwise.packet.NetworkPacket.*;
 import java.io.*;
@@ -241,6 +240,37 @@ public abstract class AbstractCoojaMote extends AbstractApplicationMote {
             } catch (Exception ex) {
                 log(ex.getLocalizedMessage());
             }
+        }
+    }
+
+    public class MoteFormatter extends Formatter {
+
+        /**
+         * Format the given LogRecord.
+         *
+         * @param record the log record to be formatted.
+         * @return a formatted log record
+         */
+        @Override
+        public final synchronized String format(final LogRecord record) {
+
+            StringBuilder sb = new StringBuilder();
+            String message = formatMessage(record);
+
+            sb.append(message);
+
+            if (record.getThrown() != null) {
+                try {
+                    StringWriter sw = new StringWriter();
+                    try (PrintWriter pw = new PrintWriter(sw)) {
+                        record.getThrown().printStackTrace(pw);
+                    }
+                    sb.append(sw.toString());
+                } catch (Exception ex) {
+                    System.err.println(ex.getLocalizedMessage());
+                }
+            }
+            return sb.append("\n").toString();
         }
     }
 
