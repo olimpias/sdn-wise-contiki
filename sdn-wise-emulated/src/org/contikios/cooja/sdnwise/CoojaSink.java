@@ -95,7 +95,7 @@ public class CoojaSink extends AbstractCoojaMote {
                     NetworkPacket np = ((SinkCore) core).getControllerPacketTobeSend();
                     inviaOBJ.write(np.toByteArray());
                 }
-            } catch (IOException | InterruptedException ex) {
+            } catch (IOException | InterruptedException ex)   {
                 Logger.getLogger(CoojaSink.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -118,7 +118,7 @@ public class CoojaSink extends AbstractCoojaMote {
         String s = (String) JOptionPane.showInputDialog(null,
                 "Please insert the IP address and TCP port of the controller:",
                 "SDN-WISE Sink",
-                JOptionPane.QUESTION_MESSAGE, null, null, "192.168.1.101:9999");
+                JOptionPane.QUESTION_MESSAGE, null, null, "192.168.178.24:9999");
 
         String[] tmp = s.split(":");
 
