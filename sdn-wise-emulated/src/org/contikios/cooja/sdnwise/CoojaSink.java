@@ -115,7 +115,7 @@ public class CoojaSink extends AbstractCoojaMote {
     }
 
     private String[] getControllerIpPort() {
-        String s = "192.168.178.25:9999"
+        String s = "192.168.178.25:9999";
 
         String[] tmp = s.split(":");
 
