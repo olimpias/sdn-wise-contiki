@@ -97,13 +97,15 @@ public abstract class AbstractCoojaMote extends AbstractApplicationMote {
     @Override
     public void execute(long time) {
 
-        simulation = getSimulation();
-        random = simulation.getRandomGenerator();
-        radio = (ApplicationRadio) getInterfaces().getRadio();
-        leds = (ApplicationLED) getInterfaces().getLED();
-        init();
-        measureLogger = initLogger(Level.FINEST, core.getMyAddress()
-                + ".log", new MoteFormatter());
+        if (radio == null) {
+            simulation = getSimulation();
+            random = simulation.getRandomGenerator();
+            radio = (ApplicationRadio) getInterfaces().getRadio();
+            leds = (ApplicationLED) getInterfaces().getLED();
+            init();
+            measureLogger = initLogger(Level.FINEST, core.getMyAddress()
+                    + ".log", new MoteFormatter());
+        }
 
         // The nodes do not start all at the same time
         int delay = random.nextInt(10);
