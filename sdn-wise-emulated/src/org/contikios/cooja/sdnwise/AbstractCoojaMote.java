@@ -148,6 +148,7 @@ public abstract class AbstractCoojaMote extends AbstractApplicationMote {
                 }
             }
             battery.receiveRadio(p.getPacketData().length);
+            core.forceToSendReport();
             core.rxRadioPacket(np, (int) (255 + radio.getCurrentSignalStrength()));
         }
     }
@@ -205,6 +206,7 @@ public abstract class AbstractCoojaMote extends AbstractApplicationMote {
                 // simulates the battery consumption
                 RadioPacket pk = new COOJARadioPacket(np.toByteArray());
                 battery.transmitRadio(pk.getPacketData().length);
+                core.forceToSendReport();
                 doneTx = actualTime;
                 radio.startTransmittingPacket(pk, 1 * Simulation.MILLISECOND);
             }
