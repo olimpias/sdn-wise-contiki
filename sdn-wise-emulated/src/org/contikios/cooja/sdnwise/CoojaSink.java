@@ -59,7 +59,7 @@ public class CoojaSink extends AbstractCoojaMote {
                     battery,
                     "00000001",
                     "00:01:02:03:04:05",
-                    1,
+                    1L,
                     addrController,
                     portController);
             core.start();
